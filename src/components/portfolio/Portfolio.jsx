@@ -1,58 +1,95 @@
 import React from 'react'
 import './portfolio.css'
-import IMG1 from '../../assets/portfolio1.jpg'
-import IMG2 from '../../assets/portfolio2.jpg'
-import IMG3 from '../../assets/portfolio3.jpg'
-import IMG4 from '../../assets/portfolio4.jpg'
-import IMG5 from '../../assets/portfolio5.png'
-import IMG6 from '../../assets/portfolio6.jpg'
+import solarDawnImg from '../../assets/project-images/solar-dawn-img.png'
+import rayCasting2DImg from '../../assets/project-images/ray-casting-2d-img.png'
+import pizzaCatImg from '../../assets/project-images/pizza-cat-img.png'
+import personalWebsiteImg from '../../assets/project-images/personal-website-img.png'
+import infinityGameEngineLogoImg from '../../assets/project-images/inifnity-game-engine-logo-img.png'
+import spaceshooterGameImg from '../../assets/project-images/spaceshooter-game-img.png'
+import junkiemusicLogoImg from '../../assets/project-images/junkiemusic-logo-img.png'
 
 const data = [
   {
     id: 1,
-    image: IMG1,
-    title: 'This is a portfolio item title',
-    github: 'https://github.com',
-    demo: 'https://itch.io.com'
+    image: solarDawnImg,
+    title: 'Solar Dawn',
+    description: 'Educational Physics Video Game. Build as part of my Diploma Thesis at University of Patras, Department of Electrical and Computer Engineering.',
+    github: 'https://github.com/thestbar/solar-dawn-game',
+    hasDemo: true,
+    demoButtonLabel: "Try it Here",
+    demo: 'https://thestbar.itch.io/solar-dawn'
   },
   {
     id: 2,
-    image: IMG2,
-    title: 'This is a portfolio item title',
-    github: 'https://github.com',
-    demo: 'https://itch.io.com'
+    image: rayCasting2DImg,
+    title: 'Ray Casting 2D',
+    description: 'Wolfenstein clone written in LibGDX (Java library that utilizes OpenGL). For the ray casting the DDA (Digital Differential Analyzer) Algorithm is used.',
+    github: 'https://github.com/thestbar/ray-casting-2d',
+    hasDemo: false,
+    demoButtonLabel: null,
+    demo: null
   },
   {
     id: 3,
-    image: IMG3,
-    title: 'This is a portfolio item title',
-    github: 'https://github.com',
-    demo: 'https://itch.io.com'
+    image: pizzaCatImg,
+    title: 'Pizza Cat',
+    description: 'Entry for LudumDare 53 Game Jam (built in a weekend) within the theme "Delivery". It was created in Java using the LibGDX framework. Cats utilize AI Pathfinding to move in the world.',
+    github: 'https://github.com/thestbar/pizza-cat',
+    hasDemo: true,
+    demo: 'https://thestbar.itch.io/pizza-cat',
+    demoButtonLabel: 'Try it Here'
   },
   {
     id: 4,
-    image: IMG4,
-    title: 'This is a portfolio item title',
-    github: 'https://github.com',
-    demo: 'https://itch.io.com'
+    image: personalWebsiteImg,
+    title: 'Personal Website',
+    description: 'This website was built by me using Javascript and React Native. Feel free to use it experimenting on your own website. (Currently under development)',
+    github: 'https://github.com/thestbar/personal-website',
+    hasDemo: false,
+    demo: null,
+    demoButtonLabel: null
   },
   {
     id: 5,
-    image: IMG5,
-    title: 'This is a portfolio item title',
-    github: 'https://github.com',
-    demo: 'https://itch.io.com'
+    image: infinityGameEngineLogoImg,
+    title: 'Infinity Game Engine',
+    description: 'Custom Java OpenGL 2D Game Engine. 2D & 3D Graphics Engines fundamendals are being explored and utilized while developing this beast. (Currently under development)',
+    github: 'https://github.com/thestbar/infinity-game-engine',
+    hasDemo: false,
+    demo: null,
+    demoButtonLabel: null
   },
   {
     id: 6,
-    image: IMG6,
-    title: 'This is a portfolio item title',
-    github: 'https://github.com',
-    demo: 'https://itch.io.com'
+    image: spaceshooterGameImg,
+    title: 'Space Shooter Clone',
+    description: 'A clone of the Classic Space Shooter 2D Game created in Java using the LibGDX framework. It was my first attempt to create a full game with LibGDX.',
+    github: 'https://github.com/thestbar/libgdx-spaceshooter',
+    hasDemo: false,
+    demo: null,
+    demoButtonLabel: null
+  },
+  {
+    id: 7,
+    image: junkiemusicLogoImg,
+    title: 'JunkieMusic',
+    description: 'Discord bot created during the pandemic so me and my friends have a DJ in the virtual room to play some music for us. Also, we were sure that this bot will not \"stalk\" us.',
+    github: 'https://github.com/thestbar/libgdx-spaceshooter',
+    hasDemo: false,
+    demo: null,
+    demoButtonLabel: null
   }
 ]
 
 const Portfolio = () => {
+
+  const demoButton = (hasDemo, demo, demoButtonLabel) => {
+    if (hasDemo) {
+      return <a href={demo} className='btn btn-primary' target='_blank'>{demoButtonLabel}</a>
+    }
+    return null;
+  }
+
   return (
     <section id='portfolio'>
       <h5>My Recent Work</h5>
@@ -60,16 +97,17 @@ const Portfolio = () => {
       <div className="container portfolio__container">
         
         {
-          data.map(({id, image, title, github, demo}) => {
+          data.map(({id, image, title, description, github, hasDemo, demoButtonLabel, demo}) => {
             return (
               <article key={id} className='portfolio__item'>
                 <div className="portfolio__item-image">
                   <img src={image} alt="Portfolio Image" />
                 </div>
                 <h3>{title}</h3>
+                <small>{description}</small>
                 <div className="portfolio__item-cta">
                   <a href={github} className='btn' target='_blank'>Github</a>
-                  <a href={demo} className='btn btn-primary' target='_blank'>Check here</a>
+                  {demoButton(hasDemo, demo, demoButtonLabel)}
                 </div>
             </article>
             )
