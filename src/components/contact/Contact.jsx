@@ -3,7 +3,6 @@ import './contact.css'
 import emailjs from '@emailjs/browser';
 import {MdOutlineEmail} from 'react-icons/md'
 import {RiMessengerLine} from 'react-icons/ri'
-import {BsWhatsapp} from 'react-icons/bs'
 
 const Contact = () => {
 
@@ -23,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact'>
+    <section id='contact' className='navbar__section'>
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 
@@ -41,18 +40,12 @@ const Contact = () => {
             <h5>Stavros Barousis</h5>
             <a href="https://m.me/stavros.barousis" target='_blank'>Send a message</a>
           </article>
-          <article className="contact__option">
-            <BsWhatsapp className='contact__option-icon' />
-            <h4>WhatsApp</h4>
-            <h5>+123456789</h5>
-            <a href="https://api.whatsapp.com/send?phone=+306989077335" target='_blank'>Send a message</a>
-          </article>
         </div>
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name='name' placeholder='Your Full Name' required />
           <input type="email" name='email' placeholder='Your Email' required />
           <textarea name="message" rows="7" placeholder='Your Message' required ></textarea>
-          <button type='submit' className="btn btn-primary" >Send Message</button>
+          <button type='submit' className='btn btn-primary' >Send Message</button>
         </form>
       </div>
     </section>

@@ -39,6 +39,10 @@
     transition: var(--transition);
 }
 
+.about__card-clickable:hover {
+    cursor: pointer !important; /* Override the cursor */
+}
+
 .about__card:hover {
     background: transparent;
     border-color: var(--color-primary-variant);
@@ -63,6 +67,10 @@
 .about__content p {
     margin: 2rem 0 2.6rem;
     color: var(--color-light);
+}
+
+.about__show-more-less:hover {
+    cursor: pointer;
 }
 
 /* ########## MEDIA QUERIES (MEDIUM DEVICES - TABLETS) ######### */

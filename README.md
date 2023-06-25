@@ -8,3 +8,5 @@ The site is hosted in Hostinger.
 
 ### Special thanks to
 The youtuber [EGATOR](https://www.youtube.com/@EGATORTUTORIALS) for helping me setup this project!
+
+Copyrights &copy; 2023 Stavros Barousis. All rights reserved.

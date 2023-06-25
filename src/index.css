@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 
 * {
     margin: 0;
@@ -11,12 +11,12 @@
 }
 
 :root {
-    --color-bg: #1f1f38;
-    --color-bg-variant: #2c2c6c;
-    --color-primary: #4db5ff;
-    --color-primary-variant: rgba(77, 181, 255, 0.4);
-    --color-white: #fff;
-    --color-light: rgba(255, 255, 255, 0.6);
+    --color-bg: #202C39;
+    --color-bg-variant: #283845;
+    --color-primary: #F29559;
+    --color-primary-variant: #F2D492;
+    --color-white: #FFFFFE;
+    --color-light: #B8B08D;
 
     --transition: all 400ms ease;
 
@@ -34,11 +34,11 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     background: var(--color-bg);
     color: var(--color-white);
     line-height: 1.7;
-    background-image: url(../src/assets/bg-texture.png);
+    background-image: url(../src/assets/shattered-dark-texture.png);
 }
 
 /* ########## GENERAL STYLES SECTION ########## */
@@ -88,6 +88,7 @@ a:hover {
 }
 
 .btn {
+    font-family: inherit;
     width: max-content;
     display: inline-block;
     color: var(--color-primary);
