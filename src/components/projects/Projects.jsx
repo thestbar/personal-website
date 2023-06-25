@@ -1,5 +1,5 @@
 import React from 'react'
-import './portfolio.css'
+import './projects.css'
 import solarDawnImg from '../../assets/project-images/solar-dawn-img.png'
 import rayCasting2DImg from '../../assets/project-images/ray-casting-2d-img.png'
 import pizzaCatImg from '../../assets/project-images/pizza-cat-img.png'
@@ -81,7 +81,7 @@ const data = [
   }
 ]
 
-const Portfolio = () => {
+const Projects = () => {
 
   const demoButton = (hasDemo, demo, demoButtonLabel) => {
     if (hasDemo) {
@@ -91,21 +91,21 @@ const Portfolio = () => {
   }
 
   return (
-    <section id='portfolio'>
+    <section id='projects' className='navbar__section'>
       <h5>My Recent Work</h5>
-      <h2>Portfolio</h2>
-      <div className="container portfolio__container">
+      <h2>Projects</h2>
+      <div className="container projects__container">
         
         {
           data.map(({id, image, title, description, github, hasDemo, demoButtonLabel, demo}) => {
             return (
-              <article key={id} className='portfolio__item'>
-                <div className="portfolio__item-image">
-                  <img src={image} alt="Portfolio Image" />
+              <article key={id} className='projects__item'>
+                <div className="projects__item-image">
+                  <img src={image} alt="Image" />
                 </div>
                 <h3>{title}</h3>
                 <small>{description}</small>
-                <div className="portfolio__item-cta">
+                <div className="projects__item-cta">
                   <a href={github} className='btn' target='_blank'>Github</a>
                   {demoButton(hasDemo, demo, demoButtonLabel)}
                 </div>
@@ -119,4 +119,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default Projects

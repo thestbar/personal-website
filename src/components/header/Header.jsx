@@ -1,12 +1,12 @@
 import React from 'react'
 import './header.css'
 import CTA from './CTA'
-import HEADER_IMG from '../../assets/header-image.jpg'
+import HEADER_IMG from '../../assets/me-img.png'
 import HeaderSocials from './HeaderSocials'
 
 const Header = () => {
   return (
-    <header>
+    <header className='navbar__section'>
       <div className="container header__container">
         <h5>Hello I'm</h5>
         <h1>Stavros Barousis</h1>
