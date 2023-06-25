@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import "./about.css"
 import ME from '../../assets/about-me-img.jpg'
 import { FaAward, FaBookOpen } from 'react-icons/fa'
@@ -34,10 +34,10 @@ this website to have a blog section where I will upload some extra stuff about t
 data structures and algorithms (a topic that I spend a lot of my personal time), to OpenGL and Android development 
 (or even maybe some web stuff). `;
 
-const About = () => {
+const About = forwardRef((props, ref) => {
   const [showMore, setShowMore] = useState(false);
   return (
-    <section id='about' className='navbar__section'>
+    <section id='about' className='navbar__section' ref={ref}>
       <h5>Get to Know</h5>
       <h2>About me</h2>
 
@@ -80,6 +80,6 @@ const About = () => {
       </div>
     </section>
   )
-}
+});
 
 export default About

@@ -4,38 +4,52 @@ import { AiOutlineHome, AiOutlineUser, AiOutlineProject } from 'react-icons/ai'
 import { BiMessageSquareDetail } from 'react-icons/bi'
 import { useState } from 'react'
 
-const Nav = () => {
-  const navbarSections = document.querySelectorAll('.navbar__section');
-  
+const Nav = (props) => {
   const [activeNav, setActiveNum] = useState('#');
 
   useEffect(() => {
-    window.onscroll = () => {
-      navbarSections.forEach(element => {
-        {/* Add 1 to top to fix bug were top value was 9.67... and offsetTop was 10.
-            This problem was leading to incosistencies. */}
-        let top = window.scrollY + 1;
-        let offset = element.offsetTop;
-        let height = element.offsetHeight;
-        let id = element.getAttribute('id');
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries;
+      if(entry[0].isIntersecting)
+        setActiveNum('#');
+    });
+    observer.observe(props.homeRef.current);
+  }, []);
 
-        if(top >= offset && top < offset + height) {
-          if(id === null)
-            setActiveNum('#');
-          else
-            setActiveNum(`#${id}`);
-        }
-      });
-    };
-  });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries;
+      if(entry[0].isIntersecting)
+        setActiveNum('#about');
+    });
+    observer.observe(props.aboutRef.current);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries;
+      if(entry[0].isIntersecting)
+        setActiveNum('#projects');
+    });
+    observer.observe(props.projectsRef.current);
+  }, []);  
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries;
+      if(entry[0].isIntersecting)
+        setActiveNum('#contact');
+    });
+    observer.observe(props.contactRef.current);
+  }, []);
 
   return (
     <nav>
-      {/* Each extra section that you add need to inherit from CSS class 'nav__item' in order to work properly */}
-      <a href="#" onClick={() => setActiveNum('#')} className={`nav__item ${activeNav === '#' ? 'active' : ''}`}><AiOutlineHome /></a>
-      <a href="#about" onClick={() => setActiveNum('#about')} className={`nav__item ${activeNav === '#about' ? 'active' : ''}`}><AiOutlineUser /></a>
-      <a href="#projects" onClick={() => setActiveNum('#projects')} className={`nav__item ${activeNav === '#projects' ? 'active' : ''}`}><AiOutlineProject /></a>
-      <a href="#contact" onClick={() => setActiveNum('#contact')} className={`nav__item ${activeNav === '#contact' ? 'active' : ''}`}><BiMessageSquareDetail /></a>
+      {/* Each extra section that you add need to create a new useEffect */}
+      <a href="#" onClick={() => setActiveNum('#')} className={activeNav === '#' ? 'active' : ''}><AiOutlineHome /></a>
+      <a href="#about" onClick={() => setActiveNum('#about')} className={activeNav === '#about' ? 'active' : ''}><AiOutlineUser /></a>
+      <a href="#projects" onClick={() => setActiveNum('#projects')} className={activeNav === '#projects' ? 'active' : ''}><AiOutlineProject /></a>
+      <a href="#contact" onClick={() => setActiveNum('#contact')} className={activeNav === '#contact' ? 'active' : ''}><BiMessageSquareDetail /></a>
     </nav>
   )
 }

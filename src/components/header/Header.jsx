@@ -1,12 +1,13 @@
 import React from 'react'
+import { forwardRef } from 'react'
 import './header.css'
 import CTA from './CTA'
 import HEADER_IMG from '../../assets/me-img.png'
 import HeaderSocials from './HeaderSocials'
 
-const Header = () => {
+const Header = forwardRef((props, ref) => {
   return (
-    <header className='navbar__section'>
+    <header className='navbar__section' ref={ref}>
       <div className="container header__container">
         <h5>Hello I'm</h5>
         <h1>Stavros Barousis</h1>
@@ -23,6 +24,6 @@ const Header = () => {
       </div>
     </header>
   )
-}
+});
 
 export default Header

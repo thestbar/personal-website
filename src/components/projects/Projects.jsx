@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './projects.css'
 import solarDawnImg from '../../assets/project-images/solar-dawn-img.png'
 import rayCasting2DImg from '../../assets/project-images/ray-casting-2d-img.png'
@@ -81,7 +81,7 @@ const data = [
   }
 ]
 
-const Projects = () => {
+const Projects = forwardRef((props, ref) => {
 
   const demoButton = (hasDemo, demo, demoButtonLabel) => {
     if (hasDemo) {
@@ -91,7 +91,7 @@ const Projects = () => {
   }
 
   return (
-    <section id='projects' className='navbar__section'>
+    <section id='projects' className='navbar__section' ref={ref}>
       <h5>My Recent Work</h5>
       <h2>Projects</h2>
       <div className="container projects__container">
@@ -117,6 +117,6 @@ const Projects = () => {
       </div>
     </section>
   )
-}
+});
 
 export default Projects
