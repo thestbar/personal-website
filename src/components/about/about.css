@@ -31,6 +31,10 @@
 }
 
 .about__card-container {
+    background: transparent;
+    cursor: default;
+    border: 1px solid transparent;
+    border-radius: 1rem;    
     display: grid;
     grid-template-columns: 1fr;
     transform-style: preserve-3d;
@@ -38,22 +42,25 @@
 
 .about__card-container:hover > .about__card-back {
     transform: rotateY(0deg);
+    background-color: transparent;
+    border: 1px solid;
+    border-color: var(--color-primary-variant);
+    border-radius: 1rem;
 }
 
 .about__card-container:hover > .about__card-front {
     transform: rotateY(180deg);
+    background-color: transparent;
 }
 
 .about__card-back {
     transform: rotateY(180deg);
-
 }
 
 .about__card-front,
 .about__card-back {
-    background: var(--color-bg-variant);
-    border: 1px solid transparent;
     border-radius: 1rem;
+    background: var(--color-bg-variant);
     padding: 2rem;
     text-align: center;
     transition: var(--slow-transition);
@@ -64,12 +71,6 @@
 
 .about__card-clickable:hover {
     cursor: pointer !important; /* Override the cursor */
-}
-
-.about__card:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
 }
 
 .about__icon {

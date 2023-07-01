@@ -19,7 +19,10 @@
     --color-light: #B8B08D;
 
     --transition: all 400ms ease;
-    --slow-transition: all 1000ms ease;
+    --slow-transition: all 1s ease;
+
+    --animation-normal: 400ms;
+    --animation-slow: 1s;
 
     --container-width-lg: 75%;
     --container-width-md: 86%;
