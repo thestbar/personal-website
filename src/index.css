@@ -19,6 +19,7 @@
     --color-light: #B8B08D;
 
     --transition: all 400ms ease;
+    --slow-transition: all 1000ms ease;
 
     --container-width-lg: 75%;
     --container-width-md: 86%;

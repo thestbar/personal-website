@@ -50,24 +50,47 @@ const About = forwardRef((props, ref) => {
         <div className="about__content">
           <div className="about__cards">
 
-            <article className='about__card'>
-              <FaAward className='about__icon'/>
-              <h5>Experience</h5>
-              <small>{getYearDiffFromToday(careerStartDate)} Years of Working Experience</small>
-            </article>
+            <div className="about__card-container">
+              <article className="about__card-front">
+                <FaAward className='about__icon'/>
+                <h5>Experience</h5>
+                <small>{getYearDiffFromToday(careerStartDate)} Years of Working Experience</small>
+              </article>
+              <article className="about__card-back">
+                <FaAward className='about__icon'/>
+                <h5>Experience</h5>
+                <ul>
+                  <li><small>EY</small></li>
+                  <li><small>Greek Army</small></li>
+                </ul>
+              </article>
+            </div>
 
-            <article className='about__card'>
-              <FaBookOpen className='about__icon'/>
-              <h5>Education</h5>
-              <small>MEng Electrical and Computer Engineering</small>
-            </article>
+            <div className="about__card-container">
+              <article className="about__card-front">
+                <FaBookOpen className='about__icon'/>
+                <h5>Education</h5>
+                <small>MEng Electrical and Computer Engineering</small>
+              </article>
+              <article className="about__card-back">
+                <FaBookOpen className='about__icon'/>
+                <h5>Education</h5>
+                <small>University of Patras, Greece</small>
+              </article>
+            </div>
 
-            <article className='about__card about__card-clickable' onClick={() => {downloadCV()}}>
-              <IoFolderSharp className='about__icon'/>
-              <h5>Resume</h5>
-              <small>Click to Download CV</small>
-            </article>
-
+            <div className="about__card-container about__card-clickable" onClick={() => {downloadCV()}}>
+              <article className="about__card-front">
+                <IoFolderSharp className='about__icon'/>
+                <h5>Resume</h5>
+                <small>Click to Download CV</small>
+              </article>
+              <article className="about__card-back">
+                <IoFolderSharp className='about__icon'/>
+                <h5>Resume</h5>
+                <small>Last Updated on June 2023</small>
+              </article>
+            </div>
           </div>
 
           <p>
