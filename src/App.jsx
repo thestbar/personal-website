@@ -29,8 +29,6 @@ const App = () => {
     fetchProjectList();
   }, []);
 
-  // console.log();
-
   return (
     <>
         <Header ref={homeRef} />
