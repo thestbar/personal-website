@@ -49,7 +49,6 @@ const About = forwardRef((props, ref) => {
         </div>
         <div className="about__content">
           <div className="about__cards">
-
             <div className="about__card-container">
               <article className="about__card-front">
                 <FaAward className='about__icon'/>

@@ -41,7 +41,7 @@ header {
     width: 1px;
     height: 2rem;
     animation-name: line_animation_frames;
-    animation-duration: 1s;
+    animation-duration: var(--animation-slow);
     animation-iteration-count: infinite;
 }
 
