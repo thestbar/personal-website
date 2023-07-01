@@ -33,8 +33,6 @@
 .about__card-container {
     background: transparent;
     cursor: default;
-    border: 1px solid transparent;
-    border-radius: 1rem;    
     display: grid;
     grid-template-columns: 1fr;
     transform-style: preserve-3d;
@@ -43,8 +41,7 @@
 .about__card-container:hover > .about__card-back {
     transform: rotateY(0deg);
     background-color: transparent;
-    border: 1px solid;
-    border-color: var(--color-primary-variant);
+    border: 1px solid var(--color-primary-variant);
     border-radius: 1rem;
 }
 
@@ -63,7 +60,7 @@
     background: var(--color-bg-variant);
     padding: 2rem;
     text-align: center;
-    transition: var(--slow-transition);
+    transition: transform var(--animation-slow) ease;
     grid-row-start: 1;
     grid-column-start: 1;
     backface-visibility: hidden;
