@@ -73,10 +73,6 @@
     cursor: pointer !important; /* Override the cursor */
 }
 
-.about__card:hover {
-    
-}
-
 .about__icon {
     color: var(--color-primary);
     font-size: 1.4rem;
